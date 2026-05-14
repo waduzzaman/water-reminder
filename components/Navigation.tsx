@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Droplets, BarChart2, Bell, User, ShoppingBag } from "lucide-react"
+import { Droplets, BarChart2, Bell, User, ShoppingBag, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -11,6 +11,7 @@ const navItems = [
   { name: "Reminders", href: "/reminders", icon: Bell },
   { name: "Profile", href: "/profile", icon: User },
   { name: "Shop", href: "/shop", icon: ShoppingBag },
+  { name: "About", href: "/about", icon: Info },
 ]
 
 export function Navigation() {
