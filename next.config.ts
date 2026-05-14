@@ -9,17 +9,29 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   // Allow access to remote image placeholder.
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**', // This allows any path under the hostname
-      },
-    ],
-  },
-  output: 'standalone',
+images: {
+     remotePatterns: [
+       {
+         protocol: 'https',
+         hostname: 'picsum.photos',
+         port: '',
+         pathname: '/**',
+       },
+       {
+         protocol: 'https',
+         hostname: 'm.media-amazon.com',
+         port: '',
+         pathname: '/**',
+       },
+       {
+         protocol: 'https',
+         hostname: 'images-na.ssl-images-amazon.com',
+         port: '',
+         pathname: '/**',
+       },
+     ],
+   },
+  // output: 'standalone', // Disabled — can cause manifest issues in dev mode on Windows
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
